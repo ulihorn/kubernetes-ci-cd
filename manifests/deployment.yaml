@@ -9,6 +9,7 @@ spec:
       labels:
         name: etcd-operator
     spec:
+      serviceAccountName: etcd-operator      
       containers:
       - name: etcd-operator
         image: quay.io/coreos/etcd-operator:v0.4.2
