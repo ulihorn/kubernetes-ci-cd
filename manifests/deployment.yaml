@@ -9,10 +9,13 @@ spec:
       labels:
         name: etcd-operator
     spec:
-      serviceAccountName: etcd-operator      
       containers:
       - name: etcd-operator
-        image: quay.io/coreos/etcd-operator:v0.4.2
+        image: quay.io/coreos/etcd-operator:v0.7.1
+        command:
+        - "bin/sh"
+        - "-c"
+        - "/usr/local/bin/etcd-operator"
         env:
         - name: MY_POD_NAMESPACE
           valueFrom:
