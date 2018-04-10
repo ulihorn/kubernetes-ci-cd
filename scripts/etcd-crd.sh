@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 echo "installing etcd operator"
-kubectl  create -f https://raw.githubusercontent.com/coreos/etcd-operator/master/example/deployment.yaml
-kubectl  rollout status -f https://raw.githubusercontent.com/coreos/etcd-operator/master/example/deployment.yaml
+kubectl create -f https://coreos.com/operators/etcd/latest/deployment.yaml
+kubectl rollout status -f https://coreos.com/operators/etcd/latest/deployment.yaml
+#kubectl  create -f https://raw.githubusercontent.com/coreos/etcd-operator/master/example/deployment.yaml
+#kubectl  rollout status -f https://raw.githubusercontent.com/coreos/etcd-operator/master/example/deployment.yaml
 
 until kubectl  get thirdpartyresource cluster.etcd.coreos.com
 do
